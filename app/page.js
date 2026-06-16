@@ -187,7 +187,7 @@ export default function Home() {
           margin-bottom: 20px;
         }
 
-        .hero-accent { color: var(--amber); }
+        .hero-accent { color: var(--accent-text); }
 
         .hero-subtitle {
           font-size: var(--text-lg);
@@ -200,6 +200,12 @@ export default function Home() {
         .hero-visual {
           display: flex;
           justify-content: center;
+        }
+
+        /* On mobile the Popular RTO Codes grid follows immediately,
+           so the hero's duplicate plates are hidden to reduce clutter. */
+        @media (max-width: 767px) {
+          .hero-visual { display: none; }
         }
 
         .hero-plates {
@@ -232,18 +238,18 @@ export default function Home() {
         /* ── RTO grid ── */
         .rto-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 12px;
         }
 
-        @media (min-width: 480px) { .rto-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 768px) { .rto-grid { grid-template-columns: repeat(4, 1fr); } }
-        @media (min-width: 1024px) { .rto-grid { grid-template-columns: repeat(6, 1fr); } }
+        @media (min-width: 480px) { .rto-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .rto-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .rto-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 
         .view-all-link {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--amber);
+          color: var(--accent-text);
           transition: color 0.12s;
         }
 
@@ -263,7 +269,7 @@ export default function Home() {
         }
 
         @media (min-width: 640px) {
-          .steps-grid { grid-template-columns: repeat(3, 1fr); }
+          .steps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         .step { display: flex; flex-direction: column; gap: 12px; }
@@ -274,7 +280,7 @@ export default function Home() {
           border-radius: 50%;
           background: var(--amber-glow);
           border: 1px solid rgba(240,160,0,0.3);
-          color: var(--amber);
+          color: var(--accent-text);
           font-family: var(--font-display);
           font-size: var(--text-lg);
           font-weight: 700;
@@ -305,12 +311,12 @@ export default function Home() {
         /* ── States ── */
         .states-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 8px;
         }
 
-        @media (min-width: 480px) { .states-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 768px) { .states-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 480px) { .states-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .states-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
         .state-card {
           display: flex;
@@ -348,7 +354,7 @@ export default function Home() {
           gap: 16px;
         }
 
-        @media (min-width: 640px) { .guides-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 640px) { .guides-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
         .guide-card {
           display: flex;
@@ -385,7 +391,7 @@ export default function Home() {
         .guide-cta {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--amber);
+          color: var(--accent-text);
         }
       `}</style>
     </>

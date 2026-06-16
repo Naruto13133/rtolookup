@@ -1,6 +1,6 @@
 /* ─── Design Tokens ─── */
 :root {
-  /* Palette — dark tarmac + HSRP plate */
+  /* Palette — dark tarmac + HSRP plate (DEFAULT THEME = DARK) */
   --tarmac:          #0E1117;
   --tarmac-raised:   #161C28;
   --tarmac-card:     #1C2335;
@@ -22,6 +22,7 @@
   --amber-bright: #F8B820;
   --amber-dim:    #A06A00;
   --amber-glow:   rgba(240,160,0,0.12);
+  --accent-text:  #F0A000;  /* amber used as small/link text — readable on dark */
 
   --text-primary:   #E4E8F0;
   --text-secondary: #8A96A8;
@@ -29,6 +30,12 @@
 
   --green-positive: #22C55E;
   --red-alert:      #EF4444;
+
+  /* Surfaces that aren't a flat var */
+  --header-bg:    rgba(14,17,23,0.85);
+  --hero-glow:    rgba(26,60,138,0.10);
+  --grain:        rgba(255,255,255,0.014);
+  --grain-opacity: 0.4;
 
   /* Typography — self-hosted via next/font/local (app/layout.js sets --ff-*).
      If a face fails to load, the var() fallback chain keeps text legible. */
@@ -62,6 +69,47 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ─── Light theme ─── daylight road / paper-white HSRP */
+:root[data-theme="light"] {
+  --tarmac:          #F4F5F7;
+  --tarmac-raised:   #FFFFFF;
+  --tarmac-card:     #FFFFFF;
+  --tarmac-border:   #E2E6EC;
+  --tarmac-border-2: #CBD2DC;
+
+  --plate-chrome: #6B7686;
+
+  --amber:        #ED9E00;
+  --amber-bright: #FFB31A;
+  --amber-dim:    #B07400;
+  --amber-glow:   rgba(237,158,0,0.14);
+  --accent-text:  #925900;  /* dark amber — readable on light surfaces */
+
+  --text-primary:   #14181F;
+  --text-secondary: #4C586A;
+  --text-muted:     #616B7A;
+
+  --header-bg:    rgba(255,255,255,0.85);
+  --hero-glow:    rgba(26,60,138,0.08);
+  --grain:        rgba(0,0,0,0.018);
+  --grain-opacity: 0.5;
+
+  --shadow-card:  0 1px 2px rgba(20,30,50,0.06), 0 6px 18px rgba(20,30,50,0.08);
+  --shadow-plate: 0 4px 20px rgba(20,30,50,0.16), 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Smooth theme switch */
+:root { color-scheme: dark; }
+:root[data-theme="light"] { color-scheme: light; }
+body, .site-header, .plate-card, .guide-card, .state-card, .faq-item,
+.spec-item, .sidebar-block, .btn-primary, .btn-ghost, .btn-outline {
+  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  body, .site-header, .plate-card, .guide-card, .state-card, .faq-item,
+  .spec-item, .sidebar-block, .btn-primary, .btn-ghost, .btn-outline { transition: none; }
+}
+
 /* ─── Reset ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -88,11 +136,11 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: var(--grain-opacity);
   background-image:
-    radial-gradient(circle at 25% 15%, rgba(255,255,255,0.015) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 75% 65%, rgba(255,255,255,0.012) 0.5px, transparent 0.5px),
-    radial-gradient(circle at 50% 90%, rgba(255,255,255,0.01) 0.5px, transparent 0.5px);
+    radial-gradient(circle at 25% 15%, var(--grain) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 75% 65%, var(--grain) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 50% 90%, var(--grain) 0.5px, transparent 0.5px);
   background-size: 7px 7px, 11px 11px, 13px 13px;
 }
 
@@ -236,7 +284,7 @@ ul, ol { list-style: none; }
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--amber);
+  color: var(--accent-text);
   margin-bottom: 12px;
 }
 
@@ -264,11 +312,19 @@ ul, ol { list-style: none; }
   color: #7AABFF;
   border: 1px solid rgba(26,60,138,0.5);
 }
+:root[data-theme="light"] .badge-blue {
+  background: rgba(26,60,138,0.10);
+  color: #1A3C8A;
+  border: 1px solid rgba(26,60,138,0.25);
+}
 
 .badge-amber {
-  background: rgba(240,160,0,0.15);
-  color: var(--amber-bright);
+  background: var(--amber-glow);
+  color: var(--accent-text);
   border: 1px solid rgba(240,160,0,0.3);
+}
+:root[data-theme="light"] .badge-amber {
+  background: rgba(237,158,0,0.12);
 }
 
 /* ─── Ad slot ─── */
@@ -302,7 +358,7 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
 }
 
-.breadcrumb a:hover { color: var(--amber); }
+.breadcrumb a:hover { color: var(--accent-text); }
 .breadcrumb-sep { color: var(--tarmac-border-2); }
 
 /* ─── Prose ─── */
@@ -331,6 +387,23 @@ ul, ol { list-style: none; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--tarmac); }
 ::-webkit-scrollbar-thumb { background: var(--tarmac-border-2); border-radius: 3px; }
+
+/* ─── Mobile: shrink plate inside cards so 2-up grid never overflows ───
+   PlateDisplay sizes via inline styles, so these need !important to win.
+   Scoped to .plate-card only — the hero/search plates are untouched. */
+@media (max-width: 460px) {
+  .plate-card { padding: 12px !important; }
+  .plate-card .plate {
+    gap: 5px !important;
+    padding: 4px 8px 4px 4px !important;
+    max-width: 100%;
+  }
+  .plate-card .plate-hologram { width: 13px !important; height: 13px !important; }
+  .plate-card .plate-ind { min-height: 30px !important; padding: 3px 4px !important; }
+  .plate-card .plate-flag { width: 13px !important; }
+  .plate-card .plate-ind-text { font-size: 7px !important; }
+  .plate-card .plate-number { font-size: 15px !important; letter-spacing: 1.5px !important; }
+}
 
 /* ─── Road-lane signature divider ─── */
 .lane {
@@ -403,7 +476,7 @@ ul, ol { list-style: none; }
   font-family: var(--font-display);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--amber);
+  color: var(--accent-text);
   line-height: 1;
 }
 

@@ -83,7 +83,7 @@ export default function Footer() {
         }
 
         .footer-disclaimer a {
-          color: var(--amber);
+          color: var(--accent-text);
           text-decoration: underline;
         }
 
@@ -108,7 +108,7 @@ export default function Footer() {
           transition: color 0.12s;
         }
 
-        .footer-links a:hover { color: var(--amber); }
+        .footer-links a:hover { color: var(--accent-text); }
 
         .footer-bottom {
           border-top: 1px solid var(--tarmac-border);

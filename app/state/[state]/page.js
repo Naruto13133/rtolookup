@@ -125,6 +125,14 @@ export default async function StatePage({ params }) {
           letter-spacing: 4px;
         }
 
+        /* Light mode: outlined transparent text fails contrast checks,
+           so render it as a solid readable fill instead. */
+        :root[data-theme="light"] .state-code-badge {
+          color: var(--accent-text);
+          -webkit-text-stroke: 0;
+          text-stroke: 0;
+        }
+
         .state-intro {
           margin-top: 14px;
           font-size: var(--text-base);
@@ -137,13 +145,13 @@ export default async function StatePage({ params }) {
 
         .state-rto-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 14px;
         }
 
-        @media (min-width: 480px) { .state-rto-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 768px) { .state-rto-grid { grid-template-columns: repeat(4, 1fr); } }
-        @media (min-width: 1024px) { .state-rto-grid { grid-template-columns: repeat(5, 1fr); } }
+        @media (min-width: 480px) { .state-rto-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .state-rto-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .state-rto-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 
         .state-info-section {
           background: var(--tarmac-raised);

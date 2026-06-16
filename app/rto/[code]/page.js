@@ -255,7 +255,7 @@ export default async function RTOPage({ params }) {
           font-family: var(--font-mono);
           font-size: var(--text-2xl);
           font-weight: 700;
-          color: var(--amber);
+          color: var(--accent-text);
         }
 
         .decode-meaning {
@@ -292,7 +292,7 @@ export default async function RTOPage({ params }) {
 
         .rto-spec-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 1px;
           background: var(--tarmac-border);
           border: 1px solid var(--tarmac-border);
@@ -302,7 +302,7 @@ export default async function RTOPage({ params }) {
         }
 
         @media (min-width: 480px) {
-          .rto-spec-grid { grid-template-columns: repeat(3, 1fr); }
+          .rto-spec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
 
         .spec-item {
@@ -362,9 +362,9 @@ export default async function RTOPage({ params }) {
         }
 
         .faq-q::-webkit-details-marker { display: none; }
-        .faq-q::after { content: '+'; float: right; color: var(--amber); font-family: var(--font-mono); }
+        .faq-q::after { content: '+'; float: right; color: var(--accent-text); font-family: var(--font-mono); }
         .faq-item[open] .faq-q::after { content: '–'; }
-        .faq-q:hover { color: var(--amber); }
+        .faq-q:hover { color: var(--accent-text); }
 
         .faq-a {
           padding: 0 20px 18px;
@@ -383,12 +383,12 @@ export default async function RTOPage({ params }) {
 
         .sibling-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 12px;
         }
 
-        @media (min-width: 480px) { .sibling-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 768px) { .sibling-grid { grid-template-columns: repeat(6, 1fr); } }
+        @media (min-width: 480px) { .sibling-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 768px) { .sibling-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
       `}</style>
     </>
   )

@@ -199,7 +199,7 @@ export default async function GuidePage({ params }) {
           border-radius: 50%;
           background: var(--amber-glow);
           border: 1.5px solid rgba(240,160,0,0.4);
-          color: var(--amber);
+          color: var(--accent-text);
           font-family: var(--font-display);
           font-size: var(--text-base);
           font-weight: 700;
@@ -249,9 +249,9 @@ export default async function GuidePage({ params }) {
         }
 
         .faq-q::-webkit-details-marker { display: none; }
-        .faq-q::after { content: '+'; float: right; color: var(--amber); }
+        .faq-q::after { content: '+'; float: right; color: var(--accent-text); }
         .faq-item[open] .faq-q::after { content: '–'; }
-        .faq-q:hover { color: var(--amber); }
+        .faq-q:hover { color: var(--accent-text); }
 
         .faq-a {
           padding: 0 18px 16px;
@@ -292,12 +292,12 @@ export default async function GuidePage({ params }) {
 
         .sidebar-link {
           font-size: var(--text-sm);
-          color: var(--amber);
+          color: var(--accent-text);
           text-decoration: underline;
           text-underline-offset: 3px;
         }
 
-        .sidebar-link:hover { color: var(--amber); }
+        .sidebar-link:hover { color: var(--accent-text); }
 
         .sidebar-guide-link {
           font-size: var(--text-sm);
@@ -306,7 +306,7 @@ export default async function GuidePage({ params }) {
           line-height: 1.5;
         }
 
-        .sidebar-guide-link:hover { color: var(--amber); }
+        .sidebar-guide-link:hover { color: var(--accent-text); }
       `}</style>
     </>
   )

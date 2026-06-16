@@ -129,7 +129,7 @@ export default function GuidesIndex() {
         .guide-index-cta {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--amber);
+          color: var(--accent-text);
         }
       `}</style>
     </>

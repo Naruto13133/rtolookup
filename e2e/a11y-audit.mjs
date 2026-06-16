@@ -47,6 +47,8 @@ async function auditPage(path) {
 
   await send('Page.enable')
   await send('Runtime.enable')
+  const THEME = process.env.THEME || 'dark'
+  await send('Page.addScriptToEvaluateOnNewDocument', { source: `try{localStorage.setItem('theme','${THEME}')}catch(e){}` })
   await send('Page.navigate', { url: BASE + path })
   await sleep(1800)
 
