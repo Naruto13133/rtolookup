@@ -80,8 +80,6 @@ export default async function GuidePage({ params }) {
               <h1 className="guide-h1">{guide.title}</h1>
               <p className="guide-intro-text">{guide.intro}</p>
 
-              {/* ── Ad ── */}
-              <div className="ad-slot ad-slot-banner" style={{ margin: '32px 0' }} aria-label="Advertisement">Advertisement</div>
 
               <h2 className="guide-section-h">Steps</h2>
               <ol className="guide-steps" aria-label="Process steps">
@@ -122,7 +120,6 @@ export default async function GuidePage({ params }) {
                 </a>
               </div>
 
-              <div className="ad-slot ad-slot-rect" style={{ margin: '0 auto' }} aria-label="Advertisement">Advertisement</div>
 
               <div className="sidebar-block">
                 <p className="sidebar-label">Related guides</p>

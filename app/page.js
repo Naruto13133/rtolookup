@@ -70,10 +70,6 @@ export default function Home() {
       {/* ── Lane divider ── */}
       <div className="container"><div className="lane" style={{ marginTop: '0' }} aria-hidden="true" /></div>
 
-      {/* ── Ad banner ── */}
-      <div className="container" style={{ marginTop: '40px', marginBottom: '0' }}>
-        <div className="ad-slot ad-slot-banner" aria-label="Advertisement">Advertisement</div>
-      </div>
 
       {/* ── Popular RTOs ── */}
       <section className="section">

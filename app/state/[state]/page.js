@@ -73,7 +73,6 @@ export default async function StatePage({ params }) {
 
       <section className="section">
         <div className="container">
-          <div className="ad-slot ad-slot-banner" style={{ marginBottom: '40px' }} aria-label="Advertisement">Advertisement</div>
 
           <div className="state-rto-grid">
             {stateRTOs.map(rto => <PlateCard key={rto.code} rto={rto} size="md" />)}

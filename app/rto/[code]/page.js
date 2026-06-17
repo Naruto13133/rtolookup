@@ -153,10 +153,6 @@ export default async function RTOPage({ params }) {
         </div>
       </section>
 
-      {/* ── Ad banner ── */}
-      <div className="container" style={{ padding: '24px 16px' }}>
-        <div className="ad-slot ad-slot-banner" aria-label="Advertisement">Advertisement</div>
-      </div>
 
       {/* ── FAQ ── */}
       <section className="section">
