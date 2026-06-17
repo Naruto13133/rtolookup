@@ -1,7 +1,7 @@
 import { guides } from '@/data/guides'
 import Link from 'next/link'
 
-const SITE_URL = 'https://rtolookup.in'
+const SITE_URL = 'https://rtolookup.site'
 
 export const metadata = {
   title: 'RTO & Vehicle Guides — RC Transfer, Owner Check & More',

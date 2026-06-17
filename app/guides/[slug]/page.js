@@ -2,7 +2,7 @@ import { guides, getGuide } from '@/data/guides'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-const SITE_URL = 'https://rtolookup.in'
+const SITE_URL = 'https://rtolookup.site'
 
 export async function generateStaticParams() {
   return guides.map(g => ({ slug: g.slug }))

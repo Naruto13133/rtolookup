@@ -1,7 +1,7 @@
 import { rtos, states, getStateSlug } from '@/data/rtos'
 import { guides } from '@/data/guides'
 
-const SITE_URL = 'https://rtolookup.in'
+const SITE_URL = 'https://rtolookup.site'
 
 export default function sitemap() {
   const now = new Date()
