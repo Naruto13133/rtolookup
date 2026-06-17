@@ -141,8 +141,8 @@ export default async function RTOPage({ params }) {
               </div>
 
               <div className="rto-actions">
-                <a href="https://parivahan.gov.in/rcdlstatus/" target="_blank" rel="noopener noreferrer nofollow" className="btn-primary">
-                  Check RC on Parivahan ↗
+                <a href="https://vahan.parivahan.gov.in/vahanservice/vahan/ui/appl_status/form_Know_Appl_Status.xhtml" target="_blank" rel="noopener noreferrer nofollow" className="btn-primary">
+                  Check RC Status ↗
                 </a>
                 <Link href="/guides/rc-transfer" className="btn-ghost">
                   RC Transfer Guide
