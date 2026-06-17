@@ -2,10 +2,12 @@ export const guides = [
   {
     slug: 'rc-transfer',
     title: 'How to Transfer RC (Registration Certificate)',
-    metaTitle: 'How to Transfer RC in India — Step-by-Step Guide 2024',
+    metaTitle: 'How to Transfer RC in India — Step-by-Step Guide 2026',
     metaDesc: 'Complete guide to transferring vehicle RC ownership in India. Forms needed, fees, Parivahan process, and timeline — for used car buyers and sellers.',
     badge: 'Most searched',
     intro: 'Every used vehicle sale in India requires an RC transfer. This is the complete process — what you need, what it costs, and how long it takes.',
+    updated: '2026-06-15',
+    quickAnswer: 'To transfer an RC in India, the buyer submits Form 29 and Form 30 (plus the original RC, valid insurance, PUC, address proof, and a bank NOC if the vehicle was financed) at the RTO where the vehicle is registered, then pays the transfer fee (₹30–₹50 for two-wheelers, ₹300–₹600 for cars). The new RC is issued within 7–30 working days and can be tracked on the Parivahan portal.',
     steps: [
       {
         title: 'Gather the documents',
@@ -33,10 +35,12 @@ export const guides = [
   {
     slug: 'check-vehicle-owner',
     title: 'How to Check Vehicle Owner by Number Plate',
-    metaTitle: 'How to Check Vehicle Owner in India — Free Methods 2024',
+    metaTitle: 'How to Check Vehicle Owner in India — Free Methods 2026',
     metaDesc: 'Find the registered owner of any Indian vehicle using the number plate. Check on Parivahan VAHAN, mParivahan app, or SMS — free and instant.',
     badge: 'Quick reference',
     intro: 'Want to know who owns a vehicle? Here are the legal, official ways to check registered owner details using any Indian vehicle registration number.',
+    updated: '2026-06-15',
+    quickAnswer: 'To check a vehicle owner by number plate, use the official Parivahan VAHAN portal (vahan.parivahan.gov.in → "Know Your Vehicle Details"), the mParivahan app, or SMS "VAHAN <registration number>" to 7738299899. Each returns the owner name, registration date, insurance validity, and PUC status for free.',
     steps: [
       {
         title: 'Use the Parivahan VAHAN portal',
@@ -68,6 +72,8 @@ export const guides = [
     metaDesc: 'Step-by-step process to get a duplicate Registration Certificate for a lost or damaged RC. FIR, Form 26, fees, and expected timeline.',
     badge: 'Common',
     intro: 'Lost or damaged your RC? Here\'s exactly what you need to do to get a duplicate Registration Certificate from the RTO.',
+    updated: '2026-06-15',
+    quickAnswer: 'To get a duplicate RC, file a police FIR for the lost certificate, fill Form 26, and submit it at the RTO with the FIR copy, valid insurance, PUC, address proof, and a chassis imprint. The fee is ₹300–₹500 and the duplicate RC arrives by post within 7–21 working days.',
     steps: [
       {
         title: 'File a police FIR',
@@ -98,6 +104,8 @@ export const guides = [
     metaDesc: 'When do you need an NOC for your vehicle? Complete guide for inter-state transfers, selling a financed vehicle, and getting NOC from bank and RTO.',
     badge: 'Interstate',
     intro: 'A No Objection Certificate (NOC) is required in specific vehicle transactions. Here\'s when you need one, who issues it, and how to apply.',
+    updated: '2026-06-15',
+    quickAnswer: 'You need a vehicle NOC from the RTO (Form 28) when moving a vehicle permanently to another state, and a separate NOC from your bank (Form 35) when selling a financed vehicle. RTO NOC costs ₹100–₹200, takes 7–15 days, and stays valid for 6 months, during which you must re-register in the new state.',
     steps: [
       {
         title: 'Know when NOC is required',
@@ -124,10 +132,12 @@ export const guides = [
   {
     slug: 'address-change',
     title: 'How to Change Address in RC',
-    metaTitle: 'How to Change Address in RC (Vehicle Registration) — 2024 Guide',
+    metaTitle: 'How to Change Address in RC (Vehicle Registration) — 2026 Guide',
     metaDesc: 'Step-by-step guide to updating your address in the Registration Certificate after moving. Form, documents, fee, and online Parivahan process.',
     badge: 'Common',
     intro: 'Moved to a new house? Your RC address should be updated to match. Here\'s how to do it at the RTO or online via Parivahan.',
+    updated: '2026-06-15',
+    quickAnswer: 'To change the address in your RC, submit Form 33 with new address proof (Aadhaar, electricity bill, or rent agreement), the original RC, insurance, and PUC — online via the Parivahan portal or at your RTO. The fee is ₹50–₹200 and an updated smart-card RC arrives by post within 7–21 days.',
     steps: [
       {
         title: 'Prepare documents',

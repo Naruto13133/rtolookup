@@ -1,4 +1,4 @@
-const SITE_URL = 'https://rtolookup.site'
+const SITE_URL = 'https://www.rtolookup.site'
 
 export default function robots() {
   return {

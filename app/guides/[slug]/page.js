@@ -2,7 +2,7 @@ import { guides, getGuide } from '@/data/guides'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-const SITE_URL = 'https://rtolookup.site'
+const SITE_URL = 'https://www.rtolookup.site'
 
 export async function generateStaticParams() {
   return guides.map(g => ({ slug: g.slug }))
@@ -25,17 +25,32 @@ export default async function GuidePage({ params }) {
   const guide = getGuide(slug)
   if (!guide) notFound()
 
+  const updatedISO = guide.updated ? `${guide.updated}T00:00:00+05:30` : undefined
+
   const howToJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: guide.title,
     description: guide.intro,
+    ...(updatedISO ? { datePublished: updatedISO, dateModified: updatedISO } : {}),
     step: guide.steps.map((s, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
       name: s.title,
       text: s.body,
     })),
+  }
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.metaTitle || guide.title,
+    description: guide.metaDesc || guide.intro,
+    ...(updatedISO ? { datePublished: updatedISO, dateModified: updatedISO } : {}),
+    inLanguage: 'en-IN',
+    author: { '@type': 'Organization', name: 'RTOLookup' },
+    publisher: { '@id': `${SITE_URL}/#org` },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/guides/${slug}` },
   }
 
   const faqJsonLd = guide.faqs?.length ? {
@@ -60,6 +75,7 @@ export default async function GuidePage({ params }) {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
@@ -78,8 +94,23 @@ export default async function GuidePage({ params }) {
             <div className="guide-main">
               <span className="badge badge-amber" style={{ marginTop: '28px', marginBottom: '16px' }}>{guide.badge}</span>
               <h1 className="guide-h1">{guide.title}</h1>
+              {guide.updated && (
+                <p className="guide-meta-line">
+                  Last updated{' '}
+                  <time dateTime={guide.updated}>
+                    {new Date(`${guide.updated}T00:00:00`).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  </time>
+                  {' · '}{guide.steps.length}-step guide
+                </p>
+              )}
               <p className="guide-intro-text">{guide.intro}</p>
 
+              {guide.quickAnswer && (
+                <div className="guide-quick-answer">
+                  <p className="quick-answer-label">Quick answer</p>
+                  <p className="quick-answer-text">{guide.quickAnswer}</p>
+                </div>
+              )}
 
               <h2 className="guide-section-h">Steps</h2>
               <ol className="guide-steps" aria-label="Process steps">
@@ -165,6 +196,35 @@ export default async function GuidePage({ params }) {
           border-left: 3px solid var(--amber);
           padding-left: 20px;
           margin-left: 0;
+        }
+
+        .guide-meta-line {
+          font-size: var(--text-sm);
+          color: var(--text-muted);
+          margin-bottom: 16px;
+        }
+
+        .guide-quick-answer {
+          margin-top: 24px;
+          padding: 20px 22px;
+          background: var(--amber-glow);
+          border: 1px solid rgba(240,160,0,0.3);
+          border-radius: var(--r-lg);
+        }
+
+        .quick-answer-label {
+          font-size: var(--text-xs);
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: var(--accent-text);
+          margin-bottom: 8px;
+        }
+
+        .quick-answer-text {
+          font-size: var(--text-base);
+          color: var(--text-primary);
+          line-height: 1.7;
         }
 
         .guide-section-h {

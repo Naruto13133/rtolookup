@@ -28,7 +28,7 @@ const mono = JetBrains_Mono({
   fallback: ['Courier New', 'monospace'],
 })
 
-const SITE_URL = 'https://rtolookup.site'
+const SITE_URL = 'https://www.rtolookup.site'
 const SITE_NAME = 'RTOLookup'
 const SITE_DESC = 'Decode Indian vehicle number plates and RTO codes instantly. Plain-English guides for RC transfer, duplicate RC, and vehicle ownership checks — covering all 1,400+ RTOs across India.'
 
