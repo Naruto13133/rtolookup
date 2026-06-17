@@ -1,37 +1,27 @@
 import './globals.css'
-import localFont from 'next/font/local'
+import { Chakra_Petch, Inter, JetBrains_Mono } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const display = localFont({
-  src: [
-    { path: '../public/fonts/ChakraPetch-400.ttf', weight: '400', style: 'normal' },
-    { path: '../public/fonts/ChakraPetch-600.ttf', weight: '600', style: 'normal' },
-    { path: '../public/fonts/ChakraPetch-700.ttf', weight: '700', style: 'normal' },
-  ],
+const display = Chakra_Petch({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
   variable: '--ff-display',
   display: 'swap',
   fallback: ['Arial Narrow', 'Arial', 'sans-serif'],
 })
 
-const body = localFont({
-  src: [
-    { path: '../public/fonts/Inter-400.ttf', weight: '400', style: 'normal' },
-    { path: '../public/fonts/Inter-500.ttf', weight: '500', style: 'normal' },
-    { path: '../public/fonts/Inter-600.ttf', weight: '600', style: 'normal' },
-    { path: '../public/fonts/Inter-700.ttf', weight: '700', style: 'normal' },
-  ],
+const body = Inter({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
   variable: '--ff-body',
   display: 'swap',
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 })
 
-const mono = localFont({
-  src: [
-    { path: '../public/fonts/JetBrainsMono-400.ttf', weight: '400', style: 'normal' },
-    { path: '../public/fonts/JetBrainsMono-600.ttf', weight: '600', style: 'normal' },
-    { path: '../public/fonts/JetBrainsMono-700.ttf', weight: '700', style: 'normal' },
-  ],
+const mono = JetBrains_Mono({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
   variable: '--ff-mono',
   display: 'swap',
   fallback: ['Courier New', 'monospace'],
