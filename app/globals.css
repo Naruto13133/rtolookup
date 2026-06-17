@@ -391,7 +391,7 @@ ul, ol { list-style: none; }
 /* ─── Mobile: shrink plate inside cards so 2-up grid never overflows ───
    PlateDisplay sizes via inline styles, so these need !important to win.
    Scoped to .plate-card only — the hero/search plates are untouched. */
-@media (max-width: 460px) {
+@media (max-width: 640px) {
   .plate-card { padding: 12px !important; }
   .plate-card .plate {
     gap: 5px !important;

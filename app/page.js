@@ -44,25 +44,27 @@ export default function Home() {
           </div>
 
           <div className="hero-visual">
-            <div className="hero-plates" role="list" aria-label="Featured RTO codes">
+            <ul className="hero-plates" aria-label="Featured RTO codes">
               {featured.slice(0, 4).map(rto => (
-                <Link key={rto.code} href={`/rto/${rto.code.toLowerCase()}`} className="hero-plate-link" role="listitem" aria-label={`${rto.code}, ${rto.city}`}>
-                  <div className="plate hero-plate">
-                    <div className="plate-hologram" style={{ width: '18px', height: '18px' }} />
-                    <div className="plate-ind" style={{ minHeight: '38px', padding: '3px 6px' }}>
-                      <div className="plate-flag" style={{ width: '15px' }}>
-                        <span style={{ background: '#FF9933', height: '2px', display: 'block' }} />
-                        <span style={{ background: '#FFFFFF', height: '2px', display: 'block' }} />
-                        <span style={{ background: '#138808', height: '2px', display: 'block' }} />
+                <li key={rto.code}>
+                  <Link href={`/rto/${rto.code.toLowerCase()}`} className="hero-plate-link" aria-label={`${rto.code}, ${rto.city}`}>
+                    <div className="plate hero-plate">
+                      <div className="plate-hologram" style={{ width: '18px', height: '18px' }} />
+                      <div className="plate-ind" style={{ minHeight: '38px', padding: '3px 6px' }}>
+                        <div className="plate-flag" style={{ width: '15px' }}>
+                          <span style={{ background: '#FF9933', height: '2px', display: 'block' }} />
+                          <span style={{ background: '#FFFFFF', height: '2px', display: 'block' }} />
+                          <span style={{ background: '#138808', height: '2px', display: 'block' }} />
+                        </div>
+                        <span className="plate-ind-text" style={{ fontSize: '8px' }}>IND</span>
                       </div>
-                      <span className="plate-ind-text" style={{ fontSize: '8px' }}>IND</span>
+                      <span className="plate-number" style={{ fontSize: '20px', letterSpacing: '3px' }}>{rto.code}</span>
                     </div>
-                    <span className="plate-number" style={{ fontSize: '20px', letterSpacing: '3px' }}>{rto.code}</span>
-                  </div>
-                  <span className="hero-plate-city">{rto.city}</span>
-                </Link>
+                    <span className="hero-plate-city">{rto.city}</span>
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
@@ -208,6 +210,7 @@ export default function Home() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 12px;
+          list-style: none;
         }
 
         .hero-plate-link {

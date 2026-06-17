@@ -3,7 +3,7 @@ import PlateCard from '@/components/PlateCard'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-const SITE_URL = 'https://rtolookup.in'
+const SITE_URL = 'https://rtolookup.site'
 
 export async function generateStaticParams() {
   return states.map(s => ({ state: getStateSlug(s) }))

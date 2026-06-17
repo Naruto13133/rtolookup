@@ -11,6 +11,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "chrome >= 109",
+    "edge >= 109",
+    "firefox >= 109",
+    "safari >= 15.4",
+    "ios_saf >= 15.4"
+  ],
   "dependencies": {
     "next": "^16.2.9",
     "react": "^19.2.7",

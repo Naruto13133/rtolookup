@@ -16,7 +16,7 @@ const body = Inter({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--ff-body',
-  display: 'swap',
+  display: 'optional', // no swap → no layout shift from flowing body text
   fallback: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 })
 
@@ -24,7 +24,7 @@ const mono = JetBrains_Mono({
   weight: ['400', '600', '700'],
   subsets: ['latin'],
   variable: '--ff-mono',
-  display: 'swap',
+  display: 'optional',
   fallback: ['Courier New', 'monospace'],
 })
 
@@ -104,6 +104,10 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0E1117" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)" />
+        {/* Speed up the deferred AdSense connection */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         {/* Anti-FOUC: set theme before first paint */}
         <script
           dangerouslySetInnerHTML={{
