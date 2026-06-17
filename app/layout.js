@@ -123,6 +123,11 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6453298923043777"
+          crossOrigin="anonymous"
+        />
       </head>
       <body>
         <a href="#main" className="skip-link">Skip to content</a>
