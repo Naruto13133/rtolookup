@@ -1,5 +1,6 @@
 import './globals.css'
 import { Chakra_Petch, Inter, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -113,13 +114,14 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <script
+      </head>
+      <body>
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6453298923043777"
           crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
-      </head>
-      <body>
         <a href="#main" className="skip-link">Skip to content</a>
         <Header />
         <main id="main">{children}</main>
