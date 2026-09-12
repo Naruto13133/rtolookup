@@ -2,6 +2,8 @@ import PlateSearch from '@/components/PlateSearch'
 import PlateCard from '@/components/PlateCard'
 import { rtos, stateGroups, states, getStateSlug } from '@/data/rtos'
 import Link from 'next/link'
+import AdsterraBanner from '@/components/AdsterraBanner'
+import SponsoredServices from '@/components/SponsoredServices'
 
 const FEATURED_CODES = ['MH-01', 'DL-1', 'KA-01', 'TN-01', 'GJ-01', 'TS-09', 'UP-32', 'WB-02', 'RJ-14', 'KL-14', 'HR-26', 'PB-65']
 
@@ -89,6 +91,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Sponsored Services ── */}
+      <SponsoredServices />
+
       {/* ── How it works ── */}
       <section className="section how-section">
         <div className="container">
@@ -113,6 +118,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Ad Banner ── */}
+      <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+        <AdsterraBanner />
+      </div>
 
       {/* ── Browse by state ── */}
       <section className="section" id="states">

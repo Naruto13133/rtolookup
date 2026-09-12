@@ -3,6 +3,8 @@ import PlateDisplay from '@/components/PlateDisplay'
 import PlateCard from '@/components/PlateCard'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import AdsterraBanner from '@/components/AdsterraBanner'
+import SponsoredServices from '@/components/SponsoredServices'
 
 const SITE_URL = 'https://www.rtolookup.site'
 
@@ -153,6 +155,16 @@ export default async function RTOPage({ params }) {
         </div>
       </section>
 
+      {/* ── Sponsored Services & Ad Banner ── */}
+      <SponsoredServices
+        title={`Services for ${rto.code} (${rto.city}) Vehicle Owners`}
+        subtitle="Compare insurance, estimate resale value, or check pending traffic challans"
+        limit={3}
+      />
+
+      <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+        <AdsterraBanner />
+      </div>
 
       {/* ── FAQ ── */}
       <section className="section">

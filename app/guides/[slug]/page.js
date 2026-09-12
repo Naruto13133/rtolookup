@@ -1,6 +1,7 @@
 import { guides, getGuide } from '@/data/guides'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import AdsterraBanner from '@/components/AdsterraBanner'
 
 const SITE_URL = 'https://www.rtolookup.site'
 
@@ -125,6 +126,11 @@ export default async function GuidePage({ params }) {
                 ))}
               </ol>
 
+              {/* ── Mid-article Ad Banner ── */}
+              <div style={{ display: 'flex', justifyContent: 'center', margin: '24px 0' }}>
+                <AdsterraBanner />
+              </div>
+
               {guide.faqs?.length > 0 && (
                 <>
                   <h2 className="guide-section-h">Frequently asked questions</h2>
@@ -151,7 +157,6 @@ export default async function GuidePage({ params }) {
                 </a>
               </div>
 
-
               <div className="sidebar-block">
                 <p className="sidebar-label">Related guides</p>
                 {guides.filter(g => g.slug !== slug).slice(0, 3).map(g => (
@@ -159,6 +164,10 @@ export default async function GuidePage({ params }) {
                     {g.title}
                   </Link>
                 ))}
+              </div>
+
+              <div className="sidebar-block" style={{ display: 'flex', justifyContent: 'center' }}>
+                <AdsterraBanner />
               </div>
             </aside>
           </div>
