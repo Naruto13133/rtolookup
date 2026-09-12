@@ -126,11 +126,6 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="lazyOnload"
         />
-        {/* Adsterra Popunder */}
-        <Script
-          src="https://pl31305682.profitableratecpmnetwork.com/3a/41/92/3a41924e197c0757498dd34ea0bc134e.js"
-          strategy="afterInteractive"
-        />
         <a href="#main" className="skip-link">Skip to content</a>
         <Header />
         <main id="main">{children}</main>
