@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link href="/" className="site-logo" aria-label="RTOLookup home" onClick={() => setMenuOpen(false)}>
+        <Link href="/" className="site-logo" aria-label="RTOLookup home" onClick={() => setMenuOpen(false)} prefetch={false}>
           <div className="logo-plate" aria-hidden="true">
             <span className="logo-ind">IND</span>
             <span className="logo-text">RTO</span>
@@ -38,7 +38,7 @@ export default function Header() {
 
         <nav className="site-nav" aria-label="Main navigation">
           {navLinks.map(l => (
-            <Link key={l.href} href={l.href} className="nav-link">{l.label}</Link>
+            <Link key={l.href} href={l.href} className="nav-link" prefetch={false}>{l.label}</Link>
           ))}
         </nav>
 
@@ -85,7 +85,7 @@ export default function Header() {
       >
         <div className="container">
           {navLinks.map(l => (
-            <Link key={l.href} href={l.href} className="mobile-link" onClick={() => setMenuOpen(false)}>
+            <Link key={l.href} href={l.href} className="mobile-link" onClick={() => setMenuOpen(false)} prefetch={false}>
               {l.label}
             </Link>
           ))}

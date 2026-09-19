@@ -19,8 +19,8 @@ export default function NotFound() {
           That RTO code or page isn't in our database. Try searching for a valid code like <strong>MH-01</strong> or <strong>DL-4</strong>.
         </p>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          <Link href="/" className="btn-primary">Search RTO codes</Link>
-          <Link href="/guides/rc-transfer" className="btn-ghost">View guides</Link>
+          <Link href="/" className="btn-primary" prefetch={false}>Search RTO codes</Link>
+          <Link href="/guides/rc-transfer" className="btn-ghost" prefetch={false}>View guides</Link>
         </div>
       </div>
 

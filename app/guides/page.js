@@ -43,7 +43,7 @@ export default function GuidesIndex() {
       <section className="guides-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
+            <Link href="/" prefetch={false}>Home</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
             <span aria-current="page">Guides</span>
           </nav>
@@ -59,7 +59,7 @@ export default function GuidesIndex() {
         <div className="container">
           <div className="guides-index-grid">
             {guides.map(guide => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="guide-index-card">
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="guide-index-card" prefetch={false}>
                 <span className="badge badge-amber guide-index-badge">{guide.badge}</span>
                 <h2 className="guide-index-title">{guide.title}</h2>
                 <p className="guide-index-desc">{guide.intro}</p>

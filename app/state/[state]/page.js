@@ -51,7 +51,7 @@ export default async function StatePage({ params }) {
       <section className="state-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
+            <Link href="/" prefetch={false}>Home</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
             <span aria-current="page">{stateName}</span>
           </nav>
@@ -93,7 +93,7 @@ export default async function StatePage({ params }) {
           </div>
           <div style={{ marginTop: '28px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             <a href="https://parivahan.gov.in" target="_blank" rel="noopener noreferrer nofollow" className="btn-outline">Official Parivahan Portal ↗</a>
-            <Link href="/guides/rc-transfer" className="btn-outline">RC Transfer Guide</Link>
+            <Link href="/guides/rc-transfer" className="btn-outline" prefetch={false}>RC Transfer Guide</Link>
           </div>
         </div>
       </section>

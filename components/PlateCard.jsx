@@ -3,7 +3,12 @@ import PlateDisplay from './PlateDisplay'
 
 export default function PlateCard({ rto, size = 'sm' }) {
   return (
-    <Link href={`/rto/${rto.code.toLowerCase()}`} className="plate-card" aria-label={`${rto.code} – ${rto.city}, ${rto.state}`}>
+    <Link
+      href={`/rto/${rto.code.toLowerCase()}`}
+      className="plate-card"
+      aria-label={`${rto.code} – ${rto.city}, ${rto.state}`}
+      prefetch={false}
+    >
       <PlateDisplay code={rto.code} size={size} />
       <div className="plate-card-meta">
         <span className="plate-card-city">{rto.city}</span>

@@ -84,9 +84,9 @@ export default async function GuidePage({ params }) {
       <article className="guide-page">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb" style={{ paddingTop: '32px' }}>
-            <Link href="/">Home</Link>
+            <Link href="/" prefetch={false}>Home</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
-            <Link href="/guides">Guides</Link>
+            <Link href="/guides" prefetch={false}>Guides</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
             <span aria-current="page">{guide.title}</span>
           </nav>
@@ -160,7 +160,7 @@ export default async function GuidePage({ params }) {
               <div className="sidebar-block">
                 <p className="sidebar-label">Related guides</p>
                 {guides.filter(g => g.slug !== slug).slice(0, 3).map(g => (
-                  <Link key={g.slug} href={`/guides/${g.slug}`} className="sidebar-guide-link">
+                  <Link key={g.slug} href={`/guides/${g.slug}`} className="sidebar-guide-link" prefetch={false}>
                     {g.title}
                   </Link>
                 ))}

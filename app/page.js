@@ -49,7 +49,7 @@ export default function Home() {
             <ul className="hero-plates" aria-label="Featured RTO codes">
               {featured.slice(0, 4).map(rto => (
                 <li key={rto.code}>
-                  <Link href={`/rto/${rto.code.toLowerCase()}`} className="hero-plate-link" aria-label={`${rto.code}, ${rto.city}`}>
+                  <Link href={`/rto/${rto.code.toLowerCase()}`} className="hero-plate-link" aria-label={`${rto.code}, ${rto.city}`} prefetch={false}>
                     <div className="plate hero-plate">
                       <div className="plate-hologram" style={{ width: '18px', height: '18px' }} />
                       <div className="plate-ind" style={{ minHeight: '38px', padding: '3px 6px' }}>
@@ -134,7 +134,7 @@ export default function Home() {
               const slug = getStateSlug(state)
               const count = stateGroups[state].length
               return (
-                <Link key={state} href={`/state/${slug}`} className="state-card">
+                <Link key={state} href={`/state/${slug}`} className="state-card" prefetch={false}>
                   <span className="state-name">{state}</span>
                   <span className="state-count">{count} RTO{count !== 1 ? 's' : ''}</span>
                 </Link>
@@ -156,7 +156,7 @@ export default function Home() {
               { slug: 'duplicate-rc', title: 'Get a Duplicate RC', desc: 'What to do when your Registration Certificate is lost or damaged. FIR, Form 26, fees, and timeline.', badge: 'Common' },
               { slug: 'noc', title: 'NOC for Vehicle Transfer', desc: 'When you need a No Objection Certificate, how to apply, and what happens without one.', badge: 'Interstate' },
             ].map(guide => (
-              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="guide-card">
+              <Link key={guide.slug} href={`/guides/${guide.slug}`} className="guide-card" prefetch={false}>
                 <span className="badge badge-amber guide-badge">{guide.badge}</span>
                 <h3 className="guide-title">{guide.title}</h3>
                 <p className="guide-desc">{guide.desc}</p>

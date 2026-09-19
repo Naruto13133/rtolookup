@@ -63,6 +63,7 @@ export default function AdsterraBanner({ className = '' }) {
           height="250"
           style={{ border: 'none', overflow: 'hidden' }}
           scrolling="no"
+          loading="lazy"
         />
       </div>
     </div>

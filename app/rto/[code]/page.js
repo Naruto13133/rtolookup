@@ -94,9 +94,9 @@ export default async function RTOPage({ params }) {
       <section className="rto-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
+            <Link href="/" prefetch={false}>Home</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
-            <Link href={`/state/${rto.state.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`}>{rto.state}</Link>
+            <Link href={`/state/${rto.state.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`} prefetch={false}>{rto.state}</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
             <span aria-current="page">{rto.code}</span>
           </nav>
@@ -146,7 +146,7 @@ export default async function RTOPage({ params }) {
                 <a href="https://vahan.parivahan.gov.in/vahanservice/vahan/ui/appl_status/form_Know_Appl_Status.xhtml" target="_blank" rel="noopener noreferrer nofollow" className="btn-primary">
                   Check RC Status ↗
                 </a>
-                <Link href="/guides/rc-transfer" className="btn-ghost">
+                <Link href="/guides/rc-transfer" className="btn-ghost" prefetch={false}>
                   RC Transfer Guide
                 </Link>
               </div>
