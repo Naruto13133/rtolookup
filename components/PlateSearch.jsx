@@ -77,7 +77,7 @@ export default function PlateSearch() {
               onChange={e => { setInput(e.target.value); setError('') }}
               placeholder="e.g. MH-01"
               className="plate-real-input"
-              aria-label="Enter RTO code"
+              aria-label="Enter RTO number plate code or vehicle registration number prefix"
               maxLength={8}
               autoComplete="off"
               autoCorrect="off"
@@ -86,7 +86,7 @@ export default function PlateSearch() {
             />
           </div>
 
-          <button type="submit" className="plate-go-btn" aria-label="Look up RTO">
+          <button type="submit" className="plate-go-btn" aria-label="Vehicle registration number check">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="11" cy="11" r="8"/>
               <path d="m21 21-4.35-4.35"/>
@@ -97,7 +97,7 @@ export default function PlateSearch() {
         {error && <p className="plate-error" role="alert">{error}</p>}
       </form>
 
-      <p className="plate-hint">Enter a state code + district number — like <strong>MH-01</strong>, <strong>DL-4</strong>, or <strong>KA-03</strong></p>
+      <p className="plate-hint">Vehicle registration number check by RTO code — e.g. <strong>GJ-01</strong> (RTO Gujarat), <strong>MH-01</strong>, or <strong>DL-01</strong></p>
 
       <style>{`
         .plate-search-wrap {

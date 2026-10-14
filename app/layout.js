@@ -30,16 +30,32 @@ const mono = JetBrains_Mono({
 
 const SITE_URL = 'https://www.rtolookup.site'
 const SITE_NAME = 'RTOLookup'
-const SITE_DESC = 'Decode Indian vehicle number plates and RTO codes instantly. Plain-English guides for RC transfer, duplicate RC, and vehicle ownership checks — covering all 1,400+ RTOs across India.'
+const SITE_DESC = 'Decode any Indian RTO number plate and vehicle registration number instantly. Perform an online RC status check by vehicle number, explore RTO Gujarat & national codes, and access vehicle registration certificate guides across India.'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Decode Any Indian Vehicle Number Plate`,
+    default: `${SITE_NAME} — Vehicle Registration Number Check & RTO Number Plate Lookup`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESC,
-  keywords: ['RTO code', 'vehicle registration', 'number plate decode', 'RC transfer', 'Parivahan', 'Indian RTO', 'HSRP', 'vehicle owner check'],
+  keywords: [
+    'rc status check by vehicle number',
+    'vehicle registration number check',
+    'rto gujarat',
+    'vehicle registration certificate',
+    'rto number plate',
+    'number plate',
+    'rto vehicle',
+    'rto registration',
+    'vehicle registration number',
+    'RTO code',
+    'RC transfer',
+    'Parivahan VAHAN',
+    'Indian RTO',
+    'HSRP',
+    'vehicle owner check',
+  ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
   openGraph: {
@@ -47,12 +63,12 @@ export const metadata = {
     locale: 'en_IN',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Decode Any Indian Vehicle Number Plate`,
+    title: `${SITE_NAME} — Vehicle Registration Number Check & RTO Number Plate Lookup`,
     description: SITE_DESC,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} — Decode Any Indian Vehicle Number Plate`,
+    title: `${SITE_NAME} — Vehicle Registration Number Check & RTO Number Plate Lookup`,
     description: SITE_DESC,
   },
   robots: {
@@ -92,7 +108,7 @@ export default function RootLayout({ children }) {
         name: SITE_NAME,
         url: SITE_URL,
         logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.svg` },
-        description: 'A reference resource that explains Indian RTO codes and vehicle registration processes in plain English.',
+        description: 'Official reference resource for RTO number plate decoding, vehicle registration number check, RC status verification, and vehicle registration certificate guides across India.',
       },
     ],
   }

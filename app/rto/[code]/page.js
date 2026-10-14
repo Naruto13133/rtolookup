@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
   const rto = getRTO(code)
   if (!rto) return {}
 
-  const title = `${rto.code} RTO – ${rto.city}, ${rto.state}`
-  const desc = `${rto.code} is the RTO code for ${rto.city} in ${rto.state}. Find office details, jurisdiction, vehicle registration info, and related RTO codes.`
+  const title = `${rto.code} RTO Number Plate – ${rto.city}, ${rto.state} | Vehicle Registration`
+  const desc = `Vehicle registration number check for ${rto.code} (${rto.city}, ${rto.state}). Office details, jurisdiction, vehicle registration certificate guidelines, and related RTO number plate codes.`
 
   return {
     title,
@@ -123,7 +123,7 @@ export default async function RTOPage({ params }) {
               <div className="badge badge-blue" style={{ marginBottom: '12px' }}>{rto.type} RTO</div>
               <h1 className="rto-title">{rto.code} — {rto.city}</h1>
               <p className="rto-intro">
-                <strong>{rto.code}</strong> is the Regional Transport Office code for <strong>{rto.city}</strong>, located in the <strong>{rto.district}</strong> district of <strong>{rto.state}</strong>. Any vehicle with a number plate beginning with {rto.code} was registered at this RTO.
+                <strong>{rto.code}</strong> is the Regional Transport Office code for <strong>{rto.city}</strong>, located in the <strong>{rto.district}</strong> district of <strong>{rto.state}</strong>. Any vehicle with an RTO number plate beginning with {rto.code} was issued its vehicle registration certificate from this RTO vehicle office.
               </p>
 
               <div className="rto-spec-grid">
@@ -144,7 +144,7 @@ export default async function RTOPage({ params }) {
 
               <div className="rto-actions">
                 <a href="https://vahan.parivahan.gov.in/vahanservice/vahan/ui/appl_status/form_Know_Appl_Status.xhtml" target="_blank" rel="noopener noreferrer nofollow" className="btn-primary">
-                  Check RC Status ↗
+                  RC Status Check by Vehicle Number ↗
                 </a>
                 <Link href="/guides/rc-transfer" className="btn-ghost" prefetch={false}>
                   RC Transfer Guide

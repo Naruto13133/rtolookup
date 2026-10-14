@@ -16,16 +16,28 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-inner">
           <div className="hero-content">
-            <p className="section-label">India's RTO Reference</p>
+            <p className="section-label">India's RTO Vehicle Registration & Number Plate Reference</p>
             <h1 className="hero-title">
               Decode any<br />
-              <span className="hero-accent">number plate</span><br />
-              instantly
+              <span className="hero-accent">RTO number plate</span><br />
+              & check RC status
             </h1>
             <p className="hero-subtitle">
-              Look up what any Indian RTO code means — the state, district, and office — in one search.
+              Instant <strong>vehicle registration number check</strong> for any Indian vehicle. Look up RTO vehicle registration details, decode number plate series, and verify <strong>vehicle registration certificate</strong> guidelines across all 1,400+ RTOs including <strong>RTO Gujarat</strong>, Maharashtra, Delhi, and more.
             </p>
             <PlateSearch />
+
+            <div className="quick-keyword-pills" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px' }}>
+              <Link href="/guides/check-vehicle-owner" className="keyword-pill" prefetch={false}>
+                🔍 RC Status Check by Vehicle Number
+              </Link>
+              <Link href="/state/gujarat" className="keyword-pill" prefetch={false}>
+                📍 RTO Gujarat (GJ) Codes
+              </Link>
+              <Link href="/guides/rc-transfer" className="keyword-pill" prefetch={false}>
+                📋 Vehicle Registration Certificate (RC)
+              </Link>
+            </div>
 
             <div className="trust-strip" style={{ marginTop: '32px' }}>
               <div className="trust-item">
@@ -98,22 +110,22 @@ export default function Home() {
       <section className="section how-section">
         <div className="container">
           <p className="section-label">How it works</p>
-          <h2 className="section-title" style={{ marginBottom: '48px' }}>Read a number plate<br />in three seconds</h2>
+          <h2 className="section-title" style={{ marginBottom: '48px' }}>RTO Vehicle Registration &<br />Number Plate Decoding</h2>
           <div className="steps-grid">
             <div className="step">
               <div className="step-num">1</div>
-              <h3 className="step-title">State code</h3>
-              <p className="step-body">The first two letters are the state. <strong>MH</strong> is Maharashtra. <strong>DL</strong> is Delhi. <strong>KA</strong> is Karnataka. Every state in India has a unique two-letter prefix.</p>
+              <h3 className="step-title">State Code & RTO Registration</h3>
+              <p className="step-body">The first two letters identify the state where the RTO registration occurred — such as <strong>GJ</strong> for <strong>RTO Gujarat</strong>, <strong>MH</strong> for Maharashtra, or <strong>DL</strong> for Delhi. Every state and UT has a distinctive code.</p>
             </div>
             <div className="step">
               <div className="step-num">2</div>
-              <h3 className="step-title">District code</h3>
-              <p className="step-body">The two digits after the state code identify the district or city. <strong>MH-01</strong> is Mumbai Central. <strong>MH-04</strong> is Pune. Higher numbers are often outer or rural districts.</p>
+              <h3 className="step-title">District Code & RTO Vehicle Office</h3>
+              <p className="step-body">The two digits following the state code pinpoint the specific RTO vehicle office issuing the vehicle registration certificate. For instance, <strong>GJ-01</strong> is Ahmedabad (RTO Gujarat), while <strong>MH-01</strong> is Mumbai Central.</p>
             </div>
             <div className="step">
               <div className="step-num">3</div>
-              <h3 className="step-title">Series + number</h3>
-              <p className="step-body">The final two letters and four digits are the registration series. They reset when the previous series is exhausted — so <strong>AA 0001</strong> follows <strong>ZZ 9999</strong>.</p>
+              <h3 className="step-title">Vehicle Registration Number Series</h3>
+              <p className="step-body">The subsequent alphanumeric series and 4 digits form your complete vehicle registration number. Running a vehicle registration number check verifies the vehicle registration certificate and official RTO jurisdiction.</p>
             </div>
           </div>
         </div>
@@ -147,14 +159,14 @@ export default function Home() {
       {/* ── Guides ── */}
       <section className="section">
         <div className="container">
-          <p className="section-label">Guides</p>
-          <h2 className="section-title" style={{ marginBottom: '32px' }}>Common RTO processes explained</h2>
+          <p className="section-label">Vehicle Registration Certificate & RTO Guides</p>
+          <h2 className="section-title" style={{ marginBottom: '32px' }}>RC Status & RTO Vehicle Guides</h2>
           <div className="guides-grid">
             {[
-              { slug: 'rc-transfer', title: 'How to Transfer RC', desc: 'Step-by-step for transferring ownership of a used vehicle — forms, fees, and the Parivahan flow.', badge: 'Most searched' },
-              { slug: 'check-vehicle-owner', title: 'Check Vehicle Owner', desc: 'How to find the registered owner of any vehicle using the registration number — legally and instantly.', badge: 'Quick reference' },
-              { slug: 'duplicate-rc', title: 'Get a Duplicate RC', desc: 'What to do when your Registration Certificate is lost or damaged. FIR, Form 26, fees, and timeline.', badge: 'Common' },
-              { slug: 'noc', title: 'NOC for Vehicle Transfer', desc: 'When you need a No Objection Certificate, how to apply, and what happens without one.', badge: 'Interstate' },
+              { slug: 'check-vehicle-owner', title: 'RC Status Check by Vehicle Number', desc: 'Perform a vehicle registration number check on Parivahan VAHAN to verify vehicle registration certificate details.', badge: 'Most searched' },
+              { slug: 'rc-transfer', title: 'Vehicle Registration Certificate Transfer', desc: 'Step-by-step for transferring ownership of a used vehicle — forms, fees, and the Parivahan flow.', badge: 'Essential' },
+              { slug: 'duplicate-rc', title: 'Duplicate Registration Certificate', desc: 'What to do when your vehicle registration certificate (RC) is lost or damaged. FIR, Form 26, and fees.', badge: 'Common' },
+              { slug: 'noc', title: 'NOC for RTO Vehicle Transfer', desc: 'When you need a No Objection Certificate for an RTO vehicle, how to apply, and inter-state rules.', badge: 'Interstate' },
             ].map(guide => (
               <Link key={guide.slug} href={`/guides/${guide.slug}`} className="guide-card" prefetch={false}>
                 <span className="badge badge-amber guide-badge">{guide.badge}</span>
@@ -201,8 +213,27 @@ export default function Home() {
           font-size: var(--text-lg);
           color: var(--text-secondary);
           line-height: 1.65;
-          margin-bottom: 36px;
-          max-width: 440px;
+          margin-bottom: 24px;
+          max-width: 480px;
+        }
+
+        .keyword-pill {
+          display: inline-flex;
+          align-items: center;
+          font-size: var(--text-xs);
+          font-weight: 500;
+          color: var(--text-secondary);
+          background: var(--tarmac-card);
+          border: 1px solid var(--tarmac-border);
+          border-radius: 9999px;
+          padding: 6px 14px;
+          text-decoration: none;
+          transition: border-color 0.15s, color 0.15s, background 0.15s;
+        }
+        .keyword-pill:hover {
+          border-color: var(--amber);
+          color: var(--text-primary);
+          background: var(--tarmac-raised);
         }
 
         .hero-visual {

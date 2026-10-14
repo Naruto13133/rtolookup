@@ -1,17 +1,17 @@
 export const guides = [
   {
     slug: 'rc-transfer',
-    title: 'How to Transfer RC (Registration Certificate)',
-    metaTitle: 'How to Transfer RC in India — Step-by-Step Guide 2026',
-    metaDesc: 'Complete guide to transferring vehicle RC ownership in India. Forms needed, fees, Parivahan process, and timeline — for used car buyers and sellers.',
+    title: 'How to Transfer RC (Vehicle Registration Certificate)',
+    metaTitle: 'How to Transfer Vehicle Registration Certificate (RC) in India — 2026 Guide',
+    metaDesc: 'Complete guide to transferring your vehicle registration certificate (RC) in India. Forms needed, fees, RTO registration process, and Parivahan timeline for used car buyers.',
     badge: 'Most searched',
-    intro: 'Every used vehicle sale in India requires an RC transfer. This is the complete process — what you need, what it costs, and how long it takes.',
+    intro: 'Every used vehicle sale in India requires transferring the vehicle registration certificate (RC). This is the complete process — what you need, what it costs, and how long it takes at the RTO vehicle office.',
     updated: '2026-06-15',
-    quickAnswer: 'To transfer an RC in India, the buyer submits Form 29 and Form 30 (plus the original RC, valid insurance, PUC, address proof, and a bank NOC if the vehicle was financed) at the RTO where the vehicle is registered, then pays the transfer fee (₹30–₹50 for two-wheelers, ₹300–₹600 for cars). The new RC is issued within 7–30 working days and can be tracked on the Parivahan portal.',
+    quickAnswer: 'To transfer a vehicle registration certificate (RC) in India, the buyer submits Form 29 and Form 30 (plus original RC, valid insurance, PUC, address proof, and bank NOC if financed) at the RTO where the vehicle is registered, then pays the transfer fee (₹30–₹50 for two-wheelers, ₹300–₹600 for cars). The new RC is issued within 7–30 working days and can be tracked on the Parivahan portal.',
     steps: [
       {
         title: 'Gather the documents',
-        body: 'You need: Form 29 (notice of transfer from seller), Form 30 (application for transfer from buyer), original RC book, valid insurance certificate, PUC (pollution) certificate, and address proof. If the vehicle was financed, you also need a NOC from the bank.',
+        body: 'You need: Form 29 (notice of transfer from seller), Form 30 (application for transfer from buyer), original vehicle registration certificate (RC), valid insurance certificate, PUC (pollution) certificate, and address proof. If the vehicle was financed, you also need a NOC from the bank.',
       },
       {
         title: 'Visit the RTO',
@@ -23,7 +23,7 @@ export const guides = [
       },
       {
         title: 'Wait for the new RC',
-        body: 'After submission, the new RC is typically issued within 7–30 working days. You\'ll receive an SMS once it\'s dispatched. You can track status on the Parivahan portal using the application number.',
+        body: 'After submission, the new vehicle registration certificate is typically issued within 7–30 working days. You\'ll receive an SMS once it\'s dispatched. You can track status on the Parivahan portal using the application number.',
       },
     ],
     faqs: [
@@ -34,46 +34,46 @@ export const guides = [
   },
   {
     slug: 'check-vehicle-owner',
-    title: 'How to Check Vehicle Owner by Number Plate',
-    metaTitle: 'How to Check Vehicle Owner in India — Free Methods 2026',
-    metaDesc: 'Find the registered owner of any Indian vehicle using the number plate. Check on Parivahan VAHAN, mParivahan app, or SMS — free and instant.',
+    title: 'RC Status Check by Vehicle Number & Owner Verification',
+    metaTitle: 'RC Status Check by Vehicle Number — Vehicle Registration Number Check 2026',
+    metaDesc: 'Perform an online RC status check by vehicle number. Fast vehicle registration number check to verify vehicle registration certificate details, RTO vehicle owner, and insurance validity.',
     badge: 'Quick reference',
-    intro: 'Want to know who owns a vehicle? Here are the legal, official ways to check registered owner details using any Indian vehicle registration number.',
+    intro: 'Want to know who owns an RTO vehicle or verify a vehicle registration certificate? Here are the official, legal ways to perform an RC status check by vehicle number and complete an instant vehicle registration number check.',
     updated: '2026-06-15',
-    quickAnswer: 'To check a vehicle owner by number plate, use the official Parivahan VAHAN portal (vahan.parivahan.gov.in → "Know Your Vehicle Details"), the mParivahan app, or SMS "VAHAN <registration number>" to 7738299899. Each returns the owner name, registration date, insurance validity, and PUC status for free.',
+    quickAnswer: 'To perform an RC status check by vehicle number, enter the vehicle registration number on the official Parivahan VAHAN portal (vahan.parivahan.gov.in → "Know Your Vehicle Details"), the mParivahan mobile app, or SMS "VAHAN <vehicle registration number>" to 7738299899. This instant vehicle registration number check verifies the vehicle registration certificate, registered owner, registration date, insurance validity, and PUC status.',
     steps: [
       {
-        title: 'Use the Parivahan VAHAN portal',
-        body: 'Go to vahan.parivahan.gov.in and click "Know Your Vehicle Details". Enter the full registration number (e.g., MH01AB1234 — no spaces or hyphens). The portal shows owner name, registration date, insurance validity, and fitness certificate status.',
+        title: 'Use the Parivahan VAHAN portal for RC status check by vehicle number',
+        body: 'Go to vahan.parivahan.gov.in and select "Know Your Vehicle Details". Enter the full vehicle registration number (e.g., GJ01AB1234 or MH01AB1234 without spaces). The portal performs an instant vehicle registration number check displaying the vehicle registration certificate details, owner name, registration date, and RTO vehicle fitness.',
       },
       {
-        title: 'mParivahan app',
-        body: 'Download the mParivahan app (official, by MoRTH) on Android or iOS. Tap "RC Status" and enter the registration number. Shows the same information as the web portal — useful for quick mobile checks.',
+        title: 'mParivahan app for mobile RTO registration check',
+        body: 'Download the official mParivahan app by MoRTH. Tap "RC Status" and enter your vehicle registration number. This performs an online RC status check by vehicle number on mobile, showing the complete vehicle registration certificate record.',
       },
       {
-        title: 'SMS method',
-        body: 'Send an SMS: VAHAN <registration number> to 7738299899. You\'ll receive owner name, registration details, insurance, and PUC validity within a few minutes. This works across all states and operators.',
+        title: 'SMS vehicle registration number check',
+        body: 'Send an SMS: VAHAN <vehicle registration number> to 7738299899. You will receive an instant RC status check by vehicle number with owner details, vehicle registration certificate validity, and insurance status directly to your phone.',
       },
       {
-        title: 'Visit the RTO directly',
-        body: 'For more detailed information (full address, loan/hypothecation status), you can visit the RTO where the vehicle is registered and submit a written request. This is slower but gives you access to records not available online.',
+        title: 'Visit the RTO vehicle office directly',
+        body: 'For physical verification or certified vehicle registration certificate copies, visit the local RTO registration authority where the vehicle was registered and submit an inquiry with your RTO number plate details.',
       },
     ],
     faqs: [
-      { q: 'Is checking vehicle owner details legal?', a: 'Yes. The Parivahan VAHAN portal is the official government service. Checking RC details is legal and routinely done for buying used vehicles, verifying parking violations, and insurance purposes.' },
-      { q: 'Can I see the owner\'s full address?', a: 'The online portal shows partial details for privacy. Full address is available only through the RTO in person, or through specific legal processes (insurance claims, accident cases).' },
-      { q: 'What if the registration number shows no results?', a: 'Try entering without spaces and hyphens (e.g., MH01AB1234 not MH-01-AB-1234). If still no result, the vehicle might be registered in a state with partial Parivahan integration, or the entry may have a typo.' },
+      { q: 'Is performing an RC status check by vehicle number legal?', a: 'Yes. The Parivahan VAHAN portal is the official government service. An online vehicle registration number check is legal and routinely used for buying used vehicles, verifying vehicle registration certificate details, and checking insurance status.' },
+      { q: 'Can I see the owner\'s full address during a vehicle registration number check?', a: 'The online portal masks partial address details for privacy. To access full vehicle registration certificate records, you may visit the relevant RTO vehicle office in person with valid documentation.' },
+      { q: 'What if the vehicle registration number check shows no results?', a: 'Try entering your RTO number plate without spaces or hyphens (e.g., GJ01AB1234 instead of GJ-01-AB-1234). If still not found, verify the state code or check if the vehicle registration certificate was recently issued.' },
     ],
   },
   {
     slug: 'duplicate-rc',
-    title: 'How to Get a Duplicate RC',
-    metaTitle: 'How to Get Duplicate RC in India — Lost or Damaged RC Guide',
-    metaDesc: 'Step-by-step process to get a duplicate Registration Certificate for a lost or damaged RC. FIR, Form 26, fees, and expected timeline.',
+    title: 'How to Get a Duplicate Vehicle Registration Certificate (RC)',
+    metaTitle: 'How to Get Duplicate Vehicle Registration Certificate (RC) — Guide',
+    metaDesc: 'Step-by-step process to get a duplicate vehicle registration certificate (RC) for a lost or damaged RC. FIR, Form 26, RTO fees, and expected timeline.',
     badge: 'Common',
-    intro: 'Lost or damaged your RC? Here\'s exactly what you need to do to get a duplicate Registration Certificate from the RTO.',
+    intro: 'Lost or damaged your vehicle registration certificate (RC)? Here\'s exactly what you need to do to get a duplicate vehicle registration certificate from the RTO vehicle office.',
     updated: '2026-06-15',
-    quickAnswer: 'To get a duplicate RC, file a police FIR for the lost certificate, fill Form 26, and submit it at the RTO with the FIR copy, valid insurance, PUC, address proof, and a chassis imprint. The fee is ₹300–₹500 and the duplicate RC arrives by post within 7–21 working days.',
+    quickAnswer: 'To get a duplicate vehicle registration certificate (RC), file a police FIR for the lost certificate, fill Form 26, and submit it at the RTO with the FIR copy, valid insurance, PUC, address proof, and a chassis imprint. The fee is ₹300–₹500 and the duplicate RC arrives by post within 7–21 working days.',
     steps: [
       {
         title: 'File a police FIR',
@@ -89,7 +89,7 @@ export const guides = [
       },
       {
         title: 'Receive duplicate RC',
-        body: 'The RTO processes the application and issues a duplicate RC within 7–21 working days. It\'s dispatched by post to your registered address. You can track status online using your application reference number.',
+        body: 'The RTO processes the application and issues a duplicate vehicle registration certificate within 7–21 working days. It is dispatched by post to your registered address.',
       },
     ],
     faqs: [

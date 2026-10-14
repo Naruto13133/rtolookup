@@ -16,8 +16,13 @@ export async function generateMetadata({ params }) {
 
   const rtoList = stateGroups[stateName]
   const codes = rtoList.map(r => r.code).join(', ')
-  const title = `${stateName} RTO Codes — All ${rtoList.length} RTOs`
-  const desc = `Complete list of all RTO codes in ${stateName}: ${codes}. Find the city and district for each RTO code.`
+  const isGujarat = stateSlug === 'gujarat'
+  const title = isGujarat
+    ? `RTO Gujarat — Complete List of All Gujarat RTO Codes & Vehicle Registration Offices`
+    : `${stateName} RTO Codes — All ${rtoList.length} RTOs`
+  const desc = isGujarat
+    ? `Complete list of RTO Gujarat vehicle registration codes: ${codes}. Check RTO number plate series, district offices, and vehicle registration certificate details across Gujarat.`
+    : `Complete list of all RTO codes in ${stateName}: ${codes}. Find the city, district, and RTO vehicle registration office for each RTO number plate.`
 
   return {
     title,
@@ -34,13 +39,14 @@ export default async function StatePage({ params }) {
 
   const stateRTOs = stateGroups[stateName]
   const stateCode = stateRTOs[0]?.code.split('-')[0] || ''
+  const isGujarat = stateSlug === 'gujarat'
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: stateName, item: `${SITE_URL}/state/${stateSlug}` },
+      { '@type': 'ListItem', position: 2, name: isGujarat ? 'RTO Gujarat' : stateName, item: `${SITE_URL}/state/${stateSlug}` },
     ],
   }
 
@@ -53,7 +59,7 @@ export default async function StatePage({ params }) {
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link href="/" prefetch={false}>Home</Link>
             <span className="breadcrumb-sep" aria-hidden="true">/</span>
-            <span aria-current="page">{stateName}</span>
+            <span aria-current="page">{isGujarat ? 'RTO Gujarat' : stateName}</span>
           </nav>
 
           <div className="state-hero-inner">
@@ -61,10 +67,22 @@ export default async function StatePage({ params }) {
               {stateCode}
             </div>
             <div>
-              <p className="section-label" style={{ marginBottom: '8px' }}>State RTOs</p>
-              <h1 className="section-title">{stateName} RTO Codes</h1>
+              <p className="section-label" style={{ marginBottom: '8px' }}>
+                {isGujarat ? 'RTO Gujarat Directory' : 'State RTOs'}
+              </p>
+              <h1 className="section-title">
+                {isGujarat ? 'RTO Gujarat — Vehicle Registration Codes' : `${stateName} RTO Codes`}
+              </h1>
               <p className="state-intro">
-                {stateName} has <strong>{stateRTOs.length} RTO{stateRTOs.length !== 1 ? 's' : ''}</strong> in this database. All vehicles registered in {stateName} carry the <strong>{stateCode}-XX</strong> prefix on their number plates.
+                {isGujarat ? (
+                  <>
+                    <strong>RTO Gujarat</strong> covers <strong>{stateRTOs.length} RTO offices</strong> across Gujarat. All vehicles registered under RTO Gujarat carry the <strong>GJ-XX</strong> prefix on their RTO number plate. Perform a vehicle registration number check or explore Gujarat RTO office details below.
+                  </>
+                ) : (
+                  <>
+                    {stateName} has <strong>{stateRTOs.length} RTO{stateRTOs.length !== 1 ? 's' : ''}</strong> in this database. All vehicles registered in {stateName} carry the <strong>{stateCode}-XX</strong> prefix on their RTO number plate for official vehicle registration certificate issuance.
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -82,7 +100,9 @@ export default async function StatePage({ params }) {
 
       <section className="section state-info-section">
         <div className="container">
-          <h2 className="section-title" style={{ marginBottom: '24px' }}>About {stateName} RTOs</h2>
+          <h2 className="section-title" style={{ marginBottom: '24px' }}>
+            {isGujarat ? 'About RTO Gujarat Vehicle Registration' : `About ${stateName} RTOs`}
+          </h2>
           <div className="prose">
             <p>
               All vehicles registered in {stateName} carry the <strong>{stateCode}</strong> prefix. The two-digit number following {stateCode} identifies the specific district or city RTO where the vehicle was registered. Lower numbers are generally older, more central offices — while higher numbers are newer or outer-district RTOs.

@@ -18,19 +18,19 @@ export default function Footer() {
               <li><Link href="/state/delhi" prefetch={false}>Delhi RTOs</Link></li>
               <li><Link href="/state/karnataka" prefetch={false}>Karnataka RTOs</Link></li>
               <li><Link href="/state/tamil-nadu" prefetch={false}>Tamil Nadu RTOs</Link></li>
-              <li><Link href="/state/gujarat" prefetch={false}>Gujarat RTOs</Link></li>
+              <li><Link href="/state/gujarat" prefetch={false}>RTO Gujarat (GJ)</Link></li>
               <li><Link href="/state/uttar-pradesh" prefetch={false}>Uttar Pradesh RTOs</Link></li>
             </ul>
           </div>
 
           <div className="footer-links">
-            <p className="footer-links-title">Guides</p>
+            <p className="footer-links-title">Guides & RC Status</p>
             <ul>
-              <li><Link href="/guides/rc-transfer" prefetch={false}>RC Transfer Guide</Link></li>
-              <li><Link href="/guides/check-vehicle-owner" prefetch={false}>Check Vehicle Owner</Link></li>
-              <li><Link href="/guides/duplicate-rc" prefetch={false}>Duplicate RC</Link></li>
+              <li><Link href="/guides/check-vehicle-owner" prefetch={false}>RC Status Check by Vehicle Number</Link></li>
+              <li><Link href="/guides/rc-transfer" prefetch={false}>Vehicle Registration Certificate Transfer</Link></li>
+              <li><Link href="/guides/duplicate-rc" prefetch={false}>Duplicate Registration Certificate</Link></li>
               <li><Link href="/guides/address-change" prefetch={false}>Address Change in RC</Link></li>
-              <li><Link href="/guides/noc" prefetch={false}>NOC for Vehicle</Link></li>
+              <li><Link href="/guides/noc" prefetch={false}>NOC for RTO Vehicle</Link></li>
             </ul>
           </div>
         </div>
